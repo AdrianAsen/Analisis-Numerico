@@ -13,7 +13,7 @@ fx=input('La funcion es: ');
 f=inline(fx);
 
 fplot(fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
-title('Método de la bisección'); hold on; grid on; %Título de la función.
+title('Método de Müller'); hold on; grid on; %Título de la función.
 axis([-10 10 -10  10])
 line([-10 10],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
 line([0 0],[-10 10],'Color','k','LineStyle','--'); %Marca el eje Y.
