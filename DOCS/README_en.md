@@ -2,12 +2,12 @@
 
 ## **Index**
   
-  * [Description](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Descripci%C3%B3n.md)
-  * [Visuals](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Visuales.md)
-  * [Installation](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Instalaci%C3%B3n.md)
-  * [Use](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Uso.md)
-  * [Suport](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Soporte.md)
-  * [Authors and Gratefulness](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Autores.md)
+  * [Description](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Description.md)
+  * [Visuals](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Visuals.md)
+  * [Installation](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Installation.md)
+  * [Use](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Use.md)
+  * [Suport](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Suport.md)
+  * [Authors and Gratefulness](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Authors.md)
 
 
 ## **Description** :page_with_curl:
