@@ -321,7 +321,7 @@ while(i<=N0)
     Y=[f(p0),0];
     plot(handles.axes1,X,Y,'ro-','markersize',5);
     fplot(handles.axes1,fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
-    title('Método de la bisección'); hold on; grid on; %Título de la función.
+    title('Método de Newton'); hold on; grid on; %Título de la función.
     axis([p0-ac  p+ac f(p0)-ac f(p)+ac])
     line([-10 10],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
     line([0 0],[-10 10],'Color','k','LineStyle','--'); %Marca el eje Y.
@@ -360,7 +360,7 @@ fx = eval(get(handles.valueFX, 'String'));
 f=inline(fx);
 
 fplot(handles.axes1,fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
-title('Método de la bisección'); hold on; grid on; %Título de la función.
+title('Método de la secante'); hold on; grid on; %Título de la función.
 axis([-10 10 -10  10])
 line([-10 10],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
 line([0 0],[-10 10],'Color','k','LineStyle','--'); %Marca el eje Y.
@@ -387,7 +387,7 @@ while(i<=N0)
     Y=[f(p0),f(pI)];
     plot(handles.axes1,X,Y,'ro-','markersize',5);
     fplot(handles.axes1,fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
-    title('Método de la bisección'); hold on; grid on; %Título de la función.
+    title('Método de la secante'); hold on; grid on; %Título de la función.
     axis([-10 10 -10  10])
     line([-100 100],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
     line([0 0],[-100 100],'Color','k','LineStyle','--'); %Marca el eje Y.
@@ -431,7 +431,7 @@ fx = eval(get(handles.valueFX, 'String'));
 f=inline(fx);
 
 fplot(handles.axes1,fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
-title('Método de la bisección'); hold on; grid on; %Título de la función.
+title('Método de la Falsa Posición'); hold on; grid on; %Título de la función.
 axis([-10 10 -10  10])
 line([-10 10],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
 line([0 0],[-10 10],'Color','k','LineStyle','--'); %Marca el eje Y.
@@ -463,7 +463,7 @@ while(i<=N0)
     Y=[f(p0),f(pI)];
     plot(handles.axes1,X,Y,'ro-','markersize',5);
     fplot(handles.axes1,fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
-    title('Método de la bisección'); hold on; grid on; %Título de la función.
+    title('Método de la Falsa Posición'); hold on; grid on; %Título de la función.
     axis([-10 10 -10  10])
     line([-100 100],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
     line([0 0],[-100 100],'Color','k','LineStyle','--'); %Marca el eje Y.
@@ -515,7 +515,7 @@ for i=1:N0
     %Y=[f(p0),f(pI)];
     plot(handles.axes1,i,f(i),'ro-','markersize',5);
     fplot(handles.axes1,fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
-    title('Método de la bisección'); hold on; grid on; %Título de la función.
+    title('Método de Aitken'); hold on; grid on; %Título de la función.
     axis([-10 10 -10  10])
     line([-100 100],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
     line([0 0],[-100 100],'Color','k','LineStyle','--'); %Marca el eje Y.
@@ -607,7 +607,7 @@ fx = eval(get(handles.valueFX, 'String'));
 f=inline(fx);
 
 fplot(handles.axes1,fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
-title('Método de la bisección'); hold on; grid on; %Título de la función.
+title('Método de Müller'); hold on; grid on; %Título de la función.
 axis([-10 10 -10  10])
 line([-10 10],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
 line([0 0],[-10 10],'Color','k','LineStyle','--'); %Marca el eje Y.
@@ -641,7 +641,7 @@ while(i<=N0)
     Y=[f(p0),f(p2),f(p1)];
     plot(handles.axes1,X,Y,'bo-','markersize',5);
     fplot(handles.axes1,fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
-    title('Método de la bisección'); hold on; grid on; %Título de la función.
+    title('Método de Müller'); hold on; grid on; %Título de la función.
     axis([-10 10 -10  10])
     line([-100 100],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
     line([0 0],[-100 100],'Color','k','LineStyle','--'); %Marca el eje Y.
