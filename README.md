@@ -7,7 +7,9 @@
  
 ## **Indice**
   
-  <a href="/DOCS/Descripción.md">Descripción </a>
+  * [Descripción.md](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Descripci%C3%B3n.md)
+  
+  
 ---
 ## **Descripción** :page_with_curl:
 ---
