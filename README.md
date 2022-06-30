@@ -3,16 +3,17 @@
 <p align="center">
   <a href="/DOCS/README_en.md">English </a>
 
----
+
  
 ## **Indice**
   
-  * [Descripción.md](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Descripci%C3%B3n.md)
+  * [Descripción](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Descripci%C3%B3n.md)
+  * [Visuales](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Visuales.md)
   
   
----
+
 ## **Descripción** :page_with_curl:
----
+
 En este proyecto se llevó a cabo la elaboración de distintos métodos númericos utilizando matlab. Un método numérico es una serie de pasos que se plantean para obtener una solución aproximada de un problema. Para lograr este objetivo, se utilizan cálculos puramente aritméticos y lógicos.
 
 Los métodos númericos que se han realizado en este proyecto han sido los siguientes :
@@ -25,13 +26,13 @@ Los métodos númericos que se han realizado en este proyecto han sido los sigui
 6. Método de Steffensen
 7. Método de Müller
 
----
+
 ## **Visuales e insignias** :tv:
   [![Captura-de-pantalla-2022-06-27-074629.png](https://i.postimg.cc/h4zx5nJM/Captura-de-pantalla-2022-06-27-074629.png)](https://postimg.cc/Sj4Jnwfz)
   
   [![interfaz.png](https://i.postimg.cc/2jQP2dgr/interfaz.png)](https://postimg.cc/w3BfBN6G)
   
----
+
 
 ## **Instalación** :computer:
 
@@ -55,7 +56,7 @@ plot(X,Y);
 ```matlab
 disp('El procedimiento fue correcto');
 ```
----
+
 ## **Uso**
 
 * [biseccion.m](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/Funciones/biseccion.m)
@@ -66,13 +67,13 @@ disp('El procedimiento fue correcto');
 * [steffensen.m](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/Funciones/steffensen.m)
 * [muller.m](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/Funciones/muller.m)
 
----
+
 ## **Soporte** :interrobang:
 
 Para cualquier consulta con respecto al funcionamiento del programa puede comunicarse al siguiente correo  *t1512700921@unitru.edu.pe* ó
 *alem20x@gmail.com*.
 
----
+
 ## **Autores y Agradecimientos** :book:
 
 
