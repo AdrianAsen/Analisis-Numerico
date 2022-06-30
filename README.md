@@ -9,9 +9,11 @@
   
   * [Descripción](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Descripci%C3%B3n.md)
   * [Visuales](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Visuales.md)
+  * [Instalación](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Instalaci%C3%B3n.md)
+  * [Uso](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Uso.md)
+  * [Soporte](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Soporte.md)
+  * [Autores y Agradecimientos](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/DOCS/Autores.md)
   
-  
-
 ## **Descripción** :page_with_curl:
 
 En este proyecto se llevó a cabo la elaboración de distintos métodos númericos utilizando matlab. Un método numérico es una serie de pasos que se plantean para obtener una solución aproximada de un problema. Para lograr este objetivo, se utilizan cálculos puramente aritméticos y lógicos.
