@@ -14,7 +14,7 @@ dfi=diff(fx);
 df=inline(dfi);
 
 fplot(fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
-title('Método de la bisección'); hold on; grid on; %Título de la función.
+title('Método de Newton'); hold on; grid on; %Título de la función.
 axis([-10 10 -10  10])
 line([-10 10],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
 line([0 0],[-10 10],'Color','k','LineStyle','--'); %Marca el eje Y.
@@ -37,7 +37,7 @@ while(i<=N0)
     Y=[f(p0),0];
     plot(X,Y,'ro-','markersize',5);
     fplot(fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
-    title('Método de la bisección'); hold on; grid on; %Título de la función.
+    title('Método de Newton'); hold on; grid on; %Título de la función.
     axis([-10  10 -10 10])
     line([-100 100],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
     line([0 0],[-100 100],'Color','k','LineStyle','--'); %Marca el eje Y.
