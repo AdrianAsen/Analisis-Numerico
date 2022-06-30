@@ -25,7 +25,7 @@ for i=1:N0
     %Y=[f(p0),f(pI)];
     plot(i,f(i),'ro-','markersize',5);
     fplot(fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
-    title('Método de la bisección'); hold on; grid on; %Título de la función.
+    title('Método de la aitken'); hold on; grid on; %Título de la función.
     axis([-10 10 -10  10])
     line([-100 100],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
     line([0 0],[-100 100],'Color','k','LineStyle','--'); %Marca el eje Y.
