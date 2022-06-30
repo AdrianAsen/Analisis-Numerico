@@ -11,7 +11,7 @@
 
 
 ## **Description** :page_with_curl:
----
+
 In this proyect it was developed different numerical methods using Matlab. An numerical method is a series of steps that are proposed to obtain an approximate solution of a problem. To achieve this goal are used arithmetic and logical calculations.
 
 The numerical methods that had been developed in this proyect are the followings ones :
@@ -24,11 +24,10 @@ The numerical methods that had been developed in this proyect are the followings
 6. Steffensen Method
 7. Müller Method
 
----
+
 ## **Visuals** :tv:
 [![Captura-de-pantalla-2022-06-27-074629.png](https://i.postimg.cc/h4zx5nJM/Captura-de-pantalla-2022-06-27-074629.png)](https://postimg.cc/Sj4Jnwfz)
 
----
 
 ## **Installation** :computer:
 
@@ -52,7 +51,7 @@ plot(X,Y);
 ```matlab
 disp('The process was correct');
 ```
----
+
 ## **Use**
 
 * [biseccion.m](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/Funciones/biseccion.m)
@@ -63,12 +62,12 @@ disp('The process was correct');
 * [steffensen.m](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/Funciones/steffensen.m)
 * [muller.m](https://github.com/AdrianAsen/Analisis-Numerico/blob/main/Funciones/muller.m)
 
----
+
 ## **Suport** :interrobang:
 
 For any questions of the program you can contact the followings emails *t1512700921@unitru.edu.pe* or *alem20x@gmail.com*. 
 
----
+
 ## **Authors and Gratefulness** :book:
 
 
