@@ -1,28 +1,4 @@
 function varargout = Interfaz(varargin)
-% INTERFAZ MATLAB code for Interfaz.fig
-%      INTERFAZ, by itself, creates a new INTERFAZ or raises the existing
-%      singleton*.
-%
-%      H = INTERFAZ returns the handle to a new INTERFAZ or the handle to
-%      the existing singleton*.
-%
-%      INTERFAZ('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in INTERFAZ.M with the given input arguments.
-%
-%      INTERFAZ('Property','Value',...) creates a new INTERFAZ or raises the
-%      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before Interfaz_OpeningFcn gets called.  An
-%      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to Interfaz_OpeningFcn via varargin.
-%
-%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
-%      instance to run (singleton)".
-%
-% See also: GUIDE, GUIDATA, GUIHANDLES
-
-% Edit the above text to modify the response to help Interfaz
-
-% Last Modified by GUIDE v2.5 26-Jun-2022 23:02:31
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -41,74 +17,55 @@ if nargout
 else
     gui_mainfcn(gui_State, varargin{:});
 end
-% End initialization code - DO NOT EDIT
 
-
-% --- Executes just before Interfaz is made visible.
 function Interfaz_OpeningFcn(hObject, eventdata, handles, varargin)
-% This function has no output args, see OutputFcn.
-% hObject    handle to figure
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to Interfaz (see VARARGIN)
 
-% Choose default command line output for Interfaz
 handles.output = hObject;
 
-% Update handles structure
 guidata(hObject, handles);
 
-% UIWAIT makes Interfaz wait for user response (see UIRESUME)
-% uiwait(handles.figure1);
 
-
-% --- Outputs from this function are returned to the command line.
 function varargout = Interfaz_OutputFcn(hObject, eventdata, handles) 
-% varargout  cell array for returning output args (see VARARGOUT);
-% hObject    handle to figure
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-% Get default command line output from handles structure
 varargout{1} = handles.output;
 
-
-% --- Executes on button press in graf_biseccion.
+%FUNCION BISECCION
 function graf_biseccion_Callback(hObject, eventdata, handles)
 %Valores de Entrada: 
 %a b tolerancia=tol Iteraciones=N0 La funcion fx
-syms x;
+
+syms x;%crea una variable simbolica para poder ingresar una funcion f(x)
 a = str2double(get(handles.valueA, 'String'));
 b = str2double(get(handles.valueB, 'String'));
 tol = str2double(get(handles.valueTOL, 'String'));
 N0 = str2double(get(handles.valueN0, 'String'));
-fx = eval(get(handles.valueFX, 'String'));
+fx = eval(get(handles.valueFX, 'String'));%Creacion de conjuntos como a1 a2 ... an
 
 %inline() construye un objeto de funcion en linea a
-%partir de la expresion
+%partir de la expresion //en lugar de usar sym(fx,a)=>f(a)
 f=inline(fx);
 
 %grafica inicial
-plot(handles.axes1,b,f(b),'ro-');
-plot(handles.axes1,a,f(a),'ro-');
+plot(handles.axes1,b,f(b),'ro-');%grafica el punto b en la funcion
+plot(handles.axes1,a,f(a),'ro-');%grafica el punto a en la funcion
 fplot(handles.axes1,fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
 title('Método de la bisección'); hold on; grid on; %Título de la función.
-axis([-10 10 -10  10])
+axis([-10 10 -10  10])%muestra de donde a donde va el plano
 line([-10 10],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
 line([0 0],[-10 10],'Color','k','LineStyle','--'); %Marca el eje Y.
 xlabel('Eje X');
 ylabel('Eje Y');
 pause
-ac=1;
+ac=1;%parametro para la vista en axis
 
 %paso1
-i=1;
-FA=f(a);
+i=1;%variable para el while funcione
+FA=f(a);%igualo la funcion en el punto a a la variable FA
 %paso2
 while(i<=N0)
 %paso3
-    p=a+(b-a)/2;
-    FP=f(p);
+    p=a+(b-a)/2;%encuentro el punto intermedio entre a y b
+    FP=f(p);%igualo la funcion en el punto p a la variable FP
     
 %Grafica en el tiempo    
     ac=ac*0.5;
@@ -117,7 +74,7 @@ while(i<=N0)
     plot(handles.axes1,p,FP,'bo-');
     fplot(handles.axes1,fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
     title('Método de la bisección'); hold on; grid on; %Título de la función.
-    axis([a-ac b+ac f(a)-ac  f(b)+ac])
+    axis([a-ac b+ac f(a)-ac  f(b)+ac])%el ac fue usado para ir acercando la vista y visualizar el metodo de mejor manera
     line([-10 10],[0 0],'Color','k','LineStyle','--'); %Marca el eje X.
     line([0 0],[-10 10],'Color','k','LineStyle','--'); %Marca el eje Y.
     xlabel('Eje X') ;
@@ -125,7 +82,7 @@ while(i<=N0)
     pause
 
 %paso4
-    if((FP==0)|((b-a)/2<tol))
+    if((FP==0)|((b-a)/2<tol))%si p es cero(poco probable) o se lleva a la tolerancia deseada entonces muestra p
         disp('La solucion de f(x)=0 es:')
         disp(p)
         pause
@@ -133,7 +90,7 @@ while(i<=N0)
 %paso5
     i=i+1;
 %paso6    
-    if(FA*FP>0)
+    if(FA*FP>0)%en cual de los dos intervalos se encuentra la raiz si en a-p o p-b
         a=p;
         FA=FP;
     else
@@ -146,22 +103,9 @@ disp('El metodo falló')
 
 
 function valueA_Callback(hObject, eventdata, handles)
-% hObject    handle to valueA (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of valueA as text
-%        str2double(get(hObject,'String')) returns contents of valueA as a double
-
-
-% --- Executes during object creation, after setting all properties.
 function valueA_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to valueA (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -169,124 +113,53 @@ end
 
 
 function valueB_Callback(hObject, eventdata, handles)
-% hObject    handle to valueB (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of valueB as text
-%        str2double(get(hObject,'String')) returns contents of valueB as a double
-
-
-% --- Executes during object creation, after setting all properties.
 function valueB_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to valueB (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function valueN0_Callback(hObject, eventdata, handles)
-% hObject    handle to valueN0 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of valueN0 as text
-%        str2double(get(hObject,'String')) returns contents of valueN0 as a double
-
-
-% --- Executes during object creation, after setting all properties.
 function valueN0_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to valueN0 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
 
 
 function valueFX_Callback(hObject, eventdata, handles)
-% hObject    handle to valueFX (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of valueFX as text
-%        str2double(get(hObject,'String')) returns contents of valueFX as a double
-
-
-% --- Executes during object creation, after setting all properties.
 function valueFX_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to valueFX (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
-
 
 function valueTOL_Callback(hObject, eventdata, handles)
-% hObject    handle to valueTOL (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of valueTOL as text
-%        str2double(get(hObject,'String')) returns contents of valueTOL as a double
-
-
-% --- Executes during object creation, after setting all properties.
 function valueTOL_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to valueTOL (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
 
-
-% --- Executes on slider movement.
 function freq_Callback(hObject, eventdata, handles)
-% hObject    handle to freq (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'Value') returns position of slider
-%        get(hObject,'Min') and get(hObject,'Max') to determine range of slider
-
-
-% --- Executes during object creation, after setting all properties.
 function freq_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to freq (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
 
-% Hint: slider controls usually have a light gray background.
 if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor',[.9 .9 .9]);
 end
 
-
-% --- Executes on button press in graf_newton.
+%METODO DE NEWTON
 function graf_newton_Callback(hObject, eventdata, handles)
 %Valores de Entrada: 
 %p0 tolerancia=tol Iteraciones=N0 La funcion fx
 syms x;
-p0 = str2double(get(handles.valueP0, 'String'));
+p0 = str2double(get(handles.valueP0, 'String'));%p0 es un punto cualquiera en la funcion donde se empezar a aproximar a la raiz
 tol = str2double(get(handles.valueTOL, 'String'));
 N0 = str2double(get(handles.valueN0, 'String'));
 fx = eval(get(handles.valueFX, 'String'));
@@ -294,7 +167,7 @@ fx = eval(get(handles.valueFX, 'String'));
 %inline() construye un objeto de funcion en linea a
 %partir de la expresion
 f=inline(fx);
-dfi=diff(fx);
+dfi=diff(fx);%dfi es la derivada de la funcion
 df=inline(dfi);
 
 fplot(handles.axes1,fx,'k-','LineWidth',2);%Grafica la función de color negro y grosor 2
@@ -344,7 +217,7 @@ end
 disp('El metodo falló')
 
 
-% --- Executes on button press in graf_secante.
+%METODO DE LA SECANTE
 function graf_secante_Callback(hObject, eventdata, handles)
 %Valores de Entrada: 
 %p0, p1 tolerancia=tol Iteraciones=N0 La funcion fx
@@ -414,7 +287,7 @@ end
 disp('El metodo falló')
 
 
-% --- Executes on button press in graf_falsaPosicion.
+% FALSA POSICION
 function graf_falsaPosicion_Callback(hObject, eventdata, handles)
 %Valores de Entrada: 
 %p0 p1 tolerancia=tol Iteraciones=N0 La funcion fx
