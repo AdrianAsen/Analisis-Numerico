@@ -1,10 +1,10 @@
 # ***Méthodes numériques***
 
-
-
 <p align="center">
-  <a href="/DOCS/README_fr.md">Français </a>
-
+  <a href="/DOCS/README.md">Español </a>
+  
+  <p align="center">
+  <a href="/DOCS/README_en.md">English </a>
 
  
 ## **Indice**
